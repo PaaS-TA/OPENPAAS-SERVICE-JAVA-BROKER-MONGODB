@@ -71,6 +71,8 @@ public class MongoServiceInstanceService implements ServiceInstanceService {
 		if (db == null) {
 			throw new ServiceBrokerException("Failed to create new DB instance: " + instance.getServiceInstanceId());
 		}
+		// TODO MongoDB dashboard
+		instance.withDashboardUrl("http://mongdb-sample-dashboard.com");
 		repository.save(instance);
 		return instance;
 	}
